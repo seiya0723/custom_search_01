@@ -1,0 +1,39 @@
+html {
+  font-size: 18px;
+}
+@media (max-width:  768px)  {
+  html {
+    font-size: 15px;
+  }
+}
+
+
+.title {
+    background:forestgreen;
+    color:white;
+    text-align:center;
+}
+.title a {
+    text-decoration:none;
+    color:inherit;
+}
+.title a:hover {
+    text-decoration:none;
+    color:inherit;
+}
+
+.search_area {
+    margin:1rem;
+}
+.sitelink_area {
+    margin:0.5rem;
+    
+}
+.sitelink {
+    font-size:1.5rem;
+
+}
+.url {
+    font-size:0.8rem;
+    color:dimgray;
+}
