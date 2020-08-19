@@ -1,12 +1,9 @@
 {% extends "search/base.html" %}
 
 {% block main %}
-<form class="search_area" action="">
-    <input class="form-control" type="textbox" name="search_word" autofocus value="{{ search_word }}">
-    <input class="form-control" type="submit" value="検索">
-</form>
 
 <!--ここに検索結果を表示する-->
+{% if data|length != 0 %}
 <p>{{ data|length }} 件ヒットしました (所要時間:約 {{ time }} 秒)</p>
 
 {% for content in data %}
@@ -16,6 +13,11 @@
     <div class="url">{{ content.url|truncatechars_html:"100" }}</div>
 </div>
 {% endfor %}
+
+{% else %}
+<p><span class="caution"> {{ search_word }} の検索結果は見つかりませんでした。</span>(所要時間:約 {{ time }} 秒)</p>
+
+{% endif %}
 
 
 {% endblock %}

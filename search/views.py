@@ -71,7 +71,7 @@ class SearchView(View):
 
                 return render(request,"search/results.html",context)
 
-        return render(request,"search/index.html")
+        return render(request,"search/base.html")
 
     def post(self, request, *args, **kwargs):
 

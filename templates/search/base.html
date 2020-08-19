@@ -19,8 +19,12 @@
     <h1 class="title"><a href="{% url "search:index" %}">カスタム検索エンジン</a></h1>
 
     <main class="container">
-    {% block main %}
-    {% endblock %}
+        <form class="search_area" action="">
+            <input class="form-control" type="textbox" name="search_word" autofocus value="{{ search_word }}">
+        </form>
+
+        {% block main %}
+        {% endblock %}
     </main>
 
 </body>
