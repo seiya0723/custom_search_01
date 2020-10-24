@@ -22,11 +22,12 @@ def search_google(words):
     else:
 
         soup        = bs4.BeautifulSoup(result.content, 'html.parser')
-        links       = soup.select(".r > a")
-        titles      = soup.select("div.r > a > h3")
+        links       = soup.select(".rc > div > a")
+        titles      = soup.select(".rc > div > a > h3 > span")
 
         link_list   = [link_tag.get("href") for link_tag in links]
         title_list  = [title_tag.get_text() for title_tag in titles]
+
 
         #タイトルとリンクが不一致の場合、
         if len(link_list) != len(title_list):
